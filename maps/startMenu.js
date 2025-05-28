@@ -1,8 +1,15 @@
-var map2 = {
+var startMenu = {
+    "fonts":  [
+        { text: '[w][a][s][d] to move', pos: { x: 150, y: 130 } },
+        { text: '[e] to attack', pos: { x: 150, y: 150 } },
+        { text: '[1] to [un]equip weapon', pos: { x: 150, y: 170 } },
+        { text: 'scroll wheel to zoom in/out', pos: { x: 150, y: 190 } },
+        { text: 'Press any key to start', pos: { x: 100, y: 210 } },
+      ],
     "scale": 2,
     "characterPosition": {
-        "x": 2.4722806862537205,
-        "y": 3.0529732627798722
+        "x": 5.345922823553079,
+        "y": 4.709465760373356
     },
     "structure": {
         "board": [
