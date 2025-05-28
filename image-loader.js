@@ -1,7 +1,7 @@
-const loadImage = (src, category, group) => {
+const loadImage = (src) => {
   return new Promise((resolve, reject) => {
     let img = new Image();
-    img.onload = () => resolve({ img, group, category });
+    img.onload = () => resolve({ img });
     img.onerror = reject;
     img.src = src;
   });
@@ -153,23 +153,6 @@ async function loadForestTiles(values) {
   values.push(ground(createBlocks(items, 1, 1, 159, 0), 1, 1));
 
   values.push(ground(createBlocks(items, 2, 4, 72, -54), 2, 4));
-  
-  // for (let i = 0; i < 110; i++) {
-  //   tiles.push(tile(items.splice(0, 1)));
-  // }
-  // tiles.push(tile(items.splice(0, 1)));
-
-  // tiles.push(...getForestGroups(5, items));
-
-  // items.splice(0, 1);
-  // items.splice(0, 1);
-
-  // tiles.push(...getForestGroups(5, items));
-
-  // items.splice(0, 1);
-  // items.splice(0, 1);
-
-  // tiles.push(...getForestGroups(5, items));
 }
 
 async function loadForestPaths(values, path) {
@@ -356,9 +339,11 @@ async function createImages() {
     ...fencesAndWalls,
     ...collections,
   ].reduce(function (r, e) {
+
     for (let i = 0; i < e.items.length; i++) {
       let child = e.items[i];
-      r[e.key] = { key: getImgKey(child.img), img: child.img };
+      let key = getImgKey(child.img);
+      r[key] = { key: key, img: child.img };
     }
     return r;
   }, {});

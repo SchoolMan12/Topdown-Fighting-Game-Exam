@@ -9,6 +9,7 @@
     <script src="game.js"></script>
     <script src="maps.js"></script>
     <script src="maps/map1.js"></script>
+    <script src="maps/map2.js"></script>
     <script src="resources.js"></script>
     <script src="image-loader.js"></script>
   </head>
@@ -122,6 +123,11 @@
       <div class="game-brush">
         <div>Brushes</div>
         <div id="brushes" class="game-brushes">
+          <div>Cleanup</div>
+          <div class="game-brushes-cleanup">
+            <div>Clear Ground</div><button onclick="onClearGround()">🧹</button>
+            <div>Clear Structure</div><button onclick="onClearStructure()">🧹</button>
+          </div>          
           <div>General</div>
           <div id="general" class="game-brushes-general"></div>
           <div>Path</div>
